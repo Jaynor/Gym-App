@@ -23,7 +23,7 @@ public class LoginRegister extends AppCompatActivity {
         //register button
         final Button bRegister = (Button) findViewById(R.id.bRegister);
 
-
+        //then so stuff with this
 
 
     }
