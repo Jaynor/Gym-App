@@ -8,7 +8,7 @@
 	
 		
 
-	$statement = mysqli_prepare($con, "INSERT INTO user (name,age,username,password) VALUES (?,?,?,?)");
+	$statement = mysqli_prepare($con, "INSERT INTO user (name,age,username,password) VALUES (?, ?, ?, ?)");
 	mysqli_stmt_bind_param($statement, "siss", $name, $age, $username,$password,weight);
 	mysqli_stmt_execute($statement);
 

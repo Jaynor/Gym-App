@@ -49,7 +49,7 @@ public class LoginRegister extends AppCompatActivity {
 
                     @Override
                     public void onResponse(String response) {
-
+                        System.out.println(response);
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
 
