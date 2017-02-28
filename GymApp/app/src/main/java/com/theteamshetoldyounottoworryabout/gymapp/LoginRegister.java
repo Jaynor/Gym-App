@@ -53,7 +53,7 @@ public class LoginRegister extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
 
-                            boolean success = jsonResponse.getBoolean("SUCCESS");
+                            boolean success = jsonResponse.getBoolean("success");
                             if(success){
                                 Intent intent = new Intent(LoginRegister.this, LoginActivity.class);
                                 LoginRegister.this.startActivity(intent);
@@ -62,7 +62,7 @@ public class LoginRegister extends AppCompatActivity {
                             else{
                                 AlertDialog.Builder builder  = new AlertDialog.Builder(LoginRegister.this);
                                 builder.setMessage("Registration failed")
-                                        .setNegativeButton("retry",null)
+                                        .setNegativeButton("Retry",null)
                                         .create()
                                         .show();
 
