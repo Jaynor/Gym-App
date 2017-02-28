@@ -1,11 +1,11 @@
 <?php
-	$con = mysqli_connect("my_host',"my_user", 'my_password","my_db");
+	$con = mysqli_connect("localhost","id916098_theteam", "password42","id916098_users");
 
 	$name = $_POST["name"];
 	$age = $_POST["age"];
 	$username = $_POST["username"];
 	$password = $_POST["password"];
-	$weight = $_POST["weight"];
+	
 		
 
 	$statement = mysqli_prepare($con, "INSERT INTO user (name,age,username,password) VALUES (?,?,?,?)");
