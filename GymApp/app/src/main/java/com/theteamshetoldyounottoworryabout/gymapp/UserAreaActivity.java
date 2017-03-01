@@ -1,5 +1,6 @@
 package com.theteamshetoldyounottoworryabout.gymapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -13,9 +14,22 @@ public class UserAreaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_area);
 
-        //get username, , welcome message
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String username = intent.getStringExtra("username");
+        int age = intent.getIntExtra("age",-1);
+
+
+
+
+
         final EditText etName = (EditText) findViewById(R.id.etName);
         final TextView etMessage = (TextView) findViewById(R.id.etWelcomMessage);
+
+        String message = name + ", Welcome.";
+        etMessage.setText(message);
+        etName.setText(name);
+
 
 
 
