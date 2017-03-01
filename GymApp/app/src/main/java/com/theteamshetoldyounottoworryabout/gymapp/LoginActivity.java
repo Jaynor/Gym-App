@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         final EditText m_login = (EditText) findViewById(R.id.m_login);
-        final EditText Password = (EditText) findViewById(R.id.etPassword);
+        final EditText Password = (EditText) findViewById(R.id.etPass);
         final Button bLogin = (Button) findViewById(R.id.button);
         final TextView registerLink = (TextView) findViewById(R.id.m_registerHere);
 
