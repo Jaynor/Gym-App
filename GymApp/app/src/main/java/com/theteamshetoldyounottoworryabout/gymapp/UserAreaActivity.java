@@ -39,6 +39,8 @@ public class UserAreaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //perform action when clicking on the object
+                Intent mIntent = new Intent(UserAreaActivity.this, MatchingView.class);
+                UserAreaActivity.this.startActivity(mIntent);
             }
         });
 

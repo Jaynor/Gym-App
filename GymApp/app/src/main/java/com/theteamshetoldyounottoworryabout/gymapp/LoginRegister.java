@@ -59,6 +59,7 @@ public class LoginRegister extends AppCompatActivity {
                                 LoginRegister.this.startActivity(intent);
 
                             }
+
                             else{
                                 AlertDialog.Builder builder  = new AlertDialog.Builder(LoginRegister.this);
                                 builder.setMessage("Registration failed")
