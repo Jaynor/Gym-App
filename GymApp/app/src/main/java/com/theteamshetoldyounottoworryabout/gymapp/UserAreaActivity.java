@@ -45,6 +45,16 @@ public class UserAreaActivity extends AppCompatActivity {
         });
 
 
+    }
+    //TODO: implement this
+    /*  1) gather location from RequestLocation Class
+        2) pass the location onto MatchingView
+        3) Still need to decide on user matching design
+
+     */
+    public void getLocation(){
+
+
 
     }
 }
