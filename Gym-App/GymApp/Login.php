@@ -1,8 +1,8 @@
 <?php 
-      $con=mysqli_connect("localhost","id916098_theteam,"password42","id916098_users");
+      $con=mysqli_connect("localhost","id916098_theteam","password42","id916098_users");
       $username=$_POST["username"];
       $password=$_POST["password"];
-      $statement= mysqli_prepare($con, 'SELECT * FROM user WHERE username = ? AND password = ?");
+      $statement= mysqli_prepare($con, "SELECT * FROM user WHERE username = ? AND password = ?");
 
       mysqli_stmt_bind_param($statement, "ss" , $username, $password);
       mysqli_stmt_execute($statement);

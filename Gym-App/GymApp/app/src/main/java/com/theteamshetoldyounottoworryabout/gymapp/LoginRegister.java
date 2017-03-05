@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.content.Intent;
+
 
 public class LoginRegister extends AppCompatActivity {
 
@@ -22,7 +25,8 @@ public class LoginRegister extends AppCompatActivity {
 
         //gather text from fields
         final EditText etName = (EditText) findViewById(R.id.etName);
-        final EditText Weight = (EditText) findViewById(R.id.Weight);
+        final EditText etAge  = (EditText) findViewById(R.id.etAge);
+       // final EditText Weight = (EditText) findViewById(R.id.Weight);
         final EditText PhoneNum = (EditText) findViewById(R.id.PhoneNum);
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
@@ -37,28 +41,29 @@ public class LoginRegister extends AppCompatActivity {
 
                 final String name = etName.getText().toString();
                 final String username = etEmail.getText().toString();
-                final int age = 21;
+                final int age = Integer.parseInt(etAge.getText().toString());
                 final String password = etPassword.getText().toString();
-                final int weight = Integer.parseInt(Weight.getText().toString());
+                //final int weight = Integer.parseInt(Weight.getText().toString());
 
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
 
                     @Override
                     public void onResponse(String response) {
-
+                       // System.out.println(response);
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
 
-                            boolean success = jsonResponse.getBoolean("SUCCESS");
+                            boolean success = jsonResponse.getBoolean("success");
                             if(success){
                                 Intent intent = new Intent(LoginRegister.this, LoginActivity.class);
                                 LoginRegister.this.startActivity(intent);
 
                             }
+
                             else{
                                 AlertDialog.Builder builder  = new AlertDialog.Builder(LoginRegister.this);
                                 builder.setMessage("Registration failed")
-                                        .setNegativeButton("retry",null)
+                                        .setNegativeButton("Retry",null)
                                         .create()
                                         .show();
 
@@ -71,9 +76,11 @@ public class LoginRegister extends AppCompatActivity {
                     }
                 };
 
-                RegisterRequest registerRequest = new RegisterRequest(name,username,age,password,weight,responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(name,username,age,password,responseListener);
                 //need to add a RequestQueee
-                //need to set permission for internet request 
+                //need to set permission for internet request
+                RequestQueue queue = Volley.newRequestQueue(LoginRegister.this);
+                queue.add(registerRequest);
 
 
 
