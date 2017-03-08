@@ -40,6 +40,10 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
+        //may need to delete this line of code later
+
+        setContentView(R.layout.activity_matching_view);
+
 
 
         //create an instance of google [play location API
@@ -90,7 +94,7 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
 
     }
     private void setUpMap(){
-        //heck, might as well set up the map, shit
+        //heck, might as well set up the map
         mMap.addMarker(new MarkerOptions().position(new LatLng(0,0)).title("marker"));
 
 
@@ -102,6 +106,9 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
         double currentLatitude = location.getLatitude();
         double currentLongitude = location.getLongitude();
 
+        System.out.print(currentLatitude);
+        System.out.print(currentLongitude);
+
         LatLng latLng = new LatLng(currentLatitude,currentLongitude);
         MarkerOptions options = new MarkerOptions()
                 .position(latLng)
@@ -109,6 +116,10 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
         mMap.addMarker(options);
         //this updates the location of the
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+        //add a methed to put this into its activity bucket --->
+
+
 
     }
 

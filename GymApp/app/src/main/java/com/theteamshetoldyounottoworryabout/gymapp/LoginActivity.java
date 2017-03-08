@@ -63,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("username",username);
                                 LoginActivity.this.startActivity(intent);
 
+
                             }else{
                                 //Print a Login error (retry) - perhaps add a timeout if we are feeling ambitious
                                 AlertDialog.Builder builder  = new AlertDialog.Builder(LoginActivity.this);
