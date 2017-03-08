@@ -40,9 +40,9 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        //may need to delete this line of code later
 
-        setContentView(R.layout.activity_matching_view);
+
+
 
 
 
