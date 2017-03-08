@@ -24,8 +24,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 
 /**
- * Created by guillermo on 3/2/17.
- */
+ * Created by guillermo on 3/2
+ *
+ * */
+//TODO add getters for this class
 
 public class RequestLocation extends FragmentActivity implements GoogleApiClient.ConnectionCallbacks,
     GoogleApiClient.OnConnectionFailedListener, LocationListener{
