@@ -124,11 +124,17 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
 
 
     }
+    public double getLattitude(){
+        return 5.0;
+    }
+    public double getLongitude(){
+        return 5.0;
 
+    }
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         //need to get permission to access location
-        //need to fix this
+        //NEED to fic permission  issues
         Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if(location==null){
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,mLocationRequest,this);

@@ -3,6 +3,7 @@ package com.theteamshetoldyounottoworryabout.gymapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 //TODO: implement a better layout design
 /*
@@ -22,8 +23,11 @@ public class MatchingView extends AppCompatActivity {
 
 
         RequestLocation locationRequest = new RequestLocation();
-
-
+        double m_location = locationRequest.getLattitude();
+        final TextView etLocation = (TextView) findViewById(R.id.etLocation);
+        String locationMessage = "here is the location, " + Double.toString(m_location);
+        etLocation.setText(locationMessage);
+        
 
 
 
