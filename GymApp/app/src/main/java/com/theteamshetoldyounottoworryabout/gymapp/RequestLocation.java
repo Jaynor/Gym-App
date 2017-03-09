@@ -38,6 +38,7 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
     private GoogleMap mMap; //perhaps may be null ->would imply Google Play Services APK is not ava
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
+    private Location m_Location;
 
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
@@ -125,16 +126,16 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
 
     }
     public double getLattitude(){
-        return 5.0;
+        return m_Location.getLatitude();
     }
     public double getLongitude(){
-        return 5.0;
+        return m_Location.getLongitude();
 
     }
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         //need to get permission to access location
-        //NEED to fic permission  issues
+        //NEED to fic permission  issues , need to fix this, fix it, fix it!
         Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if(location==null){
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,mLocationRequest,this);
@@ -143,6 +144,7 @@ public class RequestLocation extends FragmentActivity implements GoogleApiClient
         else{
             handleNewLocation(location);
         }
+        m_Location = location;
 
     }
 

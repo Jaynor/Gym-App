@@ -27,7 +27,7 @@ public class MatchingView extends AppCompatActivity {
         final TextView etLocation = (TextView) findViewById(R.id.etLocation);
         String locationMessage = "here is the location, " + Double.toString(m_location);
         etLocation.setText(locationMessage);
-        
+
 
 
 
